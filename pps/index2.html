@@ -1,0 +1,211 @@
+			<!DOCTYPE html>
+			<html lang="en">
+			<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<meta http-equiv="X-UA-Compatible" content="ie=edge">
+				<title>pencaksilatskendava</title>
+				
+				<!-- style.css -->
+				<link rel="stylesheet" href="dist/css/style.css">
+			</head>
+			<style>
+				* {
+					  padding: 0;
+					  margin: 0;
+					  box-sizing: border-box;
+					}
+					body {
+					  font-family: "sans-serif";
+					  background: #1690A7;
+					}
+					.wrapper {
+					  display: flex;
+					  justify-content: center;
+					  align-items: center;
+					  width: 100vw;
+					  height: 100vh;
+					background: #000;
+					}
+
+					.welcome_text {
+					  width: 400px;
+					}
+
+					.welcome_form {
+					}
+
+					.welcome_form input,
+					.welcome_form button {
+					  display: block;
+					  width: 100%;
+					}
+
+					.welcome_form input {
+					  background-color: transparent;
+					  color: #000;
+					  font-size: 30px;
+					  text-align: center;
+					  border: none;
+					  border-bottom: 1px solid #fff;
+					  margin-bottom: 15px;
+					}
+
+					.welcome_form input:focus {
+				
+						
+						border: 5px solid #ccc;
+						padding: 10px;
+						background: #fff;
+						
+						border-radius: 100px;
+					}
+					  
+					}
+
+					.welcome_form button {
+					  padding: 10px;
+					  border: none;
+					  border-radius: 10px;
+					  background-color: #000;
+					  color: #fff;
+					  font-size: 14px;
+					  font-color: #000;
+					  transition: 0.4s all;
+					}
+
+
+					}
+
+					.quiz {
+					  display: grid;
+					  grid-template-rows: 60px auto;
+					  width: 800px;
+					  height: 500px;
+					  background-color: #fff;
+					  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+					  border-radius: 2px;
+					}
+
+					.quiz_header {
+					  display: flex;
+					  justify-content: space-between;
+					  border-top-left-radius: 3px;
+					  border-top-right-radius: 3px;
+					  background-color: #fff;
+					  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+					  z-index: 1;
+					}
+					.quiz_body {
+					  padding: 30px 30px;
+					}
+					.quiz_user {
+					  display: flex;
+					  align-items: center;
+					  height: 100%;
+					  padding-left: 30px;
+					}
+
+					.quiz_timer {
+					  display: flex;
+					  align-items: center;
+					  justify-content: center;
+					  height: 100%;
+					  width: 100px;
+					  background-color: #341f97;
+					  color: #fff;
+					}
+					.quiz_body {
+					  background-color: #ecf0f1;
+					}
+
+					.option_group {
+					  list-style-type: none;
+					  margin: 30px 0;
+					}
+
+					.option {
+					  display: block;
+					  width: 300px;
+					  background-color: #fff;
+					  margin-bottom: 20px;
+					  padding: 15px 20px;
+					  border-radius: 100px;
+					  border: 2px solid transparent;
+					  transition: 0.4s all;
+					}
+
+					.option:hover {
+					  cursor: pointer;
+					  /* background-color: rgba(255, 255, 255, 0.1); */
+					  border: 2px solid #341f97;
+					  color: #341f97;
+					}
+					.option.active {
+					  background-color: #341f97;
+					  color: #fff;
+					}
+					.btn-next {
+					  border: none;
+					  padding: 15px 35px;
+					  background-color: #341f97;
+					  color: #fff;
+					  border-radius: 27px;
+					  transition: 0.4s all;
+					}
+
+					.btn-next:hover {
+					  cursor: pointer;
+					  background-color: #fff;
+					  color: #341f97;
+					  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+					}
+
+					.award_icon {
+					  display: block;
+					  font-size: 300px;
+					  color: #fff;
+					}
+
+					.username,
+					.userpoints,
+					.usertime {
+					  color: #fff;
+					  text-align: center;
+					  margin-top: 15px;
+					}
+
+			</style>
+			<body>
+				<div class="wrapper">
+					<div class="welcome_text">
+						<form class="welcome_form" name="welcome_form" onsubmit="submitForm(event)">
+							</marquee><input type="text" name="name" placeholder="eits tulis nama singkat dulu"></marquee>
+							<button>go all info</button>
+						</form>
+					</div>
+				</div>
+
+				<!-- site.js -->
+				<script>
+					function submitForm(e) {
+						e.preventDefault();
+						let name = document.forms["welcome_form"]["name"].value;
+					  
+						sessionStorage.setItem("name", name);
+					  
+						location.href = "index3.html";
+					  }
+				</script>
+				
+			<?php 
+			if(!empty($name)){
+				
+				if(filter_var($name, FILTER_VALIDATE_EMAIL) === false){
+					$statusMsg = 'Please enter your valid name.';
+					$msgClassk = 'errordiv';
+				}
+			?>
+			</body>
+			</html>
+			
